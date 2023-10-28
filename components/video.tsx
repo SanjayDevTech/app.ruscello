@@ -176,22 +176,22 @@ export default function Video({ videoFilePath }) {
     <div className="flex flex-col items-center justify-center w-full h-full py-2">
       <div ref={videoAndControl} className="relative">
         <div
-          className={videoState.fullScreen ? 'h-full': 'md:max-w-screen-lg xl:max-w-screen-lg 2xl:max-w-screen-xl h-full' }
+          className={videoState.fullScreen ? 'h-full' : 'md:max-w-screen-lg xl:max-w-screen-lg 2xl:max-w-screen-xl h-full'}
           onMouseMove={mouseMoveHandler}
         >
-            <ReactPlayer
-              className="object-cover p-0 m-0 pointer-events-none"
-              ref={videoPlayerRef}
-              url={videoFilePath}
-              width="100%"
-              height="100%"
-              playing={playing}
-              volume={volume}
-              muted={muted}
-              onProgress={progressHandler}
-              onBuffer={bufferStartHandler}
-              onBufferEnd={bufferEndHandler}
-            />
+          <ReactPlayer
+            className="object-cover p-0 m-0 pointer-events-none"
+            ref={videoPlayerRef}
+            url={videoFilePath}
+            width="100%"
+            height="100%"
+            playing={playing}
+            volume={volume}
+            muted={muted}
+            onProgress={progressHandler}
+            onBuffer={bufferStartHandler}
+            onBufferEnd={bufferEndHandler}
+          />
           <div className="object-cover p-0 m-0">
             <Control
               onPlayPause={playPauseHandler}

@@ -16,13 +16,13 @@ export default function Room() {
   const videoAlone = useRef<any>(null);
 
   const { id: roomName } = router.query;
-  
+
   useEffect(() => {
     socket.emit("join", { room: roomName, socketId: socket.io.engine.id });
-      // prevent space bar from scrolling this page down 
-  window.onkeydown = function (e) {
-    return !(e.keyCode == 32);
-  };
+    // prevent space bar from scrolling this page down 
+    window.onkeydown = function (e) {
+      return !(e.keyCode == 32);
+    };
   }, [roomName]);
 
   function callVideoAndFace() {

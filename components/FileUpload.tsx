@@ -49,7 +49,7 @@ const FileUpload = () => {
   }
 
   function handleSearch() {
-    setFile(null);   
+    setFile(null);
     setTitle(url);
     socket.emit("room-video-id", url, { room: roomName });
   }
@@ -120,8 +120,7 @@ const FileUpload = () => {
         <div className="p-2">
           <div
             className={
-              `relative border-2 border-dashed rounded-md p-4 ${
-                dragging ? "border-blue-500" : "border-gray-500"
+              `relative border-2 border-dashed rounded-md p-4 ${dragging ? "border-blue-500" : "border-gray-500"
               }` + (file ? "hidden" : "")
             }
             onDragEnter={handleDragEnter}
@@ -165,7 +164,7 @@ const FileUpload = () => {
                       className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Paste Url"
                       onChange={(e) => setUrl(e.target.value)}
-                      //required
+                    //required
                     />
                     <button
                       type="submit"

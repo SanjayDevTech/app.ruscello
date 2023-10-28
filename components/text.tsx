@@ -14,7 +14,7 @@ export default function Text() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-    socketInitializer();
+      socketInitializer();
     }
 
     // return () => {

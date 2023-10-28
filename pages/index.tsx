@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
@@ -29,7 +28,7 @@ export default function Home() {
               placeholder="User Name"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              // required
+            // required
             />
           </div>
 
