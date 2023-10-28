@@ -12,7 +12,7 @@ export default function Text() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Array<Message>>([]);
 
-  useEffect(() => {
+  useEffect(function listenToSocketEvents() {
     if (typeof window !== 'undefined') {
       socketInitializer();
     }

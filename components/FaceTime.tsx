@@ -30,7 +30,7 @@ export default function FaceTime() {
   });
 
   // get user media
-  useEffect(() => {
+  useEffect(function setupPeerJs() {
     peer.on("open", (id) => {
       socket.emit("joinUser", roomName, id);
     });

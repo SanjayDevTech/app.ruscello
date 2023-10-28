@@ -2,7 +2,7 @@ import Script from "next/script";
 import React, { useEffect, useState } from "react";
 
 function FeedbackModal() {
-  useEffect(() => {
+  useEffect(function setupPopupTimer() {
     const popupShown = localStorage.getItem("popupShown");
     //localStorage.clear();
     const feedbackButton = document.getElementById("feedback-button");

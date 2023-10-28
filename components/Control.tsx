@@ -61,7 +61,7 @@ function Control(props: ControlProps) {
     /* on press space button in keyboard call all the control navigations using switch statement for p[lay, pause seek, etc... */
   }
 
-  useEffect(() => {
+  useEffect(function setupKeysForVideo() {
     const handleKeyDown = (e) => {
       switch (e.code) {
         case "Space":

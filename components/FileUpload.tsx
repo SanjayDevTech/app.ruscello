@@ -54,7 +54,7 @@ function FileUpload() {
     socket.emit("room-video-id", url, { room: roomName });
   }
 
-  useEffect(() => {
+  useEffect(function listenToRoomVideoId() {
     socket.on("room-video-id", (videoId) => {
       setTitle(videoId);
     });

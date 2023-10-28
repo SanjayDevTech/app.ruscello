@@ -17,7 +17,7 @@ export default function Room() {
 
   const { id: roomName } = router.query;
 
-  useEffect(() => {
+  useEffect(function joinRoom() {
     socket.emit("join", { room: roomName, socketId: socket.io.engine.id });
     // prevent space bar from scrolling this page down 
     window.onkeydown = function (e) {

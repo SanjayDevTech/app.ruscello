@@ -143,7 +143,7 @@ export default function Video({ videoFilePath }) {
     const currentTime = videoPlayerRef.current.getCurrentTime();
     socket.emit("syncVideo", currentTime, { room: roomName });
   };
-  useEffect(() => {
+  useEffect(function listenToSocketEvents() {
     socketInitializer();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
