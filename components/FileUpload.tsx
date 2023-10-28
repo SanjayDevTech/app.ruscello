@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 const Video = dynamic(() => import("./video"));
 
-const FileUpload = () => {
+function FileUpload() {
   const [dragging, setDragging] = useState(false);
   const [file, setFile] = useState<string | null>(null);
   const [url, setUrl] = useState<string | null>(null);

@@ -1,7 +1,7 @@
 import Script from "next/script";
 import React, { useEffect, useState } from "react";
 
-const FeedbackModal = () => {
+function FeedbackModal() {
   useEffect(() => {
     const popupShown = localStorage.getItem("popupShown");
     //localStorage.clear();

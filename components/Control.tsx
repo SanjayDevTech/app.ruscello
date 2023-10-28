@@ -13,27 +13,50 @@ import SyncIcon from "@mui/icons-material/Sync";
 
 import styles from "@/styles/Control.module.css";
 
-const Control = ({
-  onPlayPause,
-  playing,
-  onRewind,
-  onForward,
-  played,
-  onSeek,
-  onSeekMouseUp,
-  onVolumeChangeHandler,
-  onVolumeSeekUp,
-  volume,
-  mute,
-  onMute,
-  duration,
-  currentTime,
-  onMouseSeekDown,
-  fullScreen,
-  handleClickFullscreen,
-  controlRef,
-  onSync,
-}) => {
+type ControlProps = {
+  onPlayPause: () => void;
+  playing: boolean;
+  onRewind: () => void;
+  onForward: () => void;
+  played: number;
+  onSeek: (e: any, newValue: number | number[]) => void;
+  onSeekMouseUp: (e: any, newValue: number | number[]) => void;
+  onVolumeChangeHandler: (e: any, newValue: number | number[]) => void;
+  onVolumeSeekUp: (e: any, newValue: number | number[]) => void;
+  volume: number;
+  mute: boolean;
+  onMute: () => void;
+  duration: string;
+  currentTime: string;
+  onMouseSeekDown: (e: any) => void;
+  fullScreen: boolean;
+  handleClickFullscreen: () => void;
+  controlRef: any;
+  onSync: () => void;
+};
+
+function Control(props: ControlProps) {
+  const {
+    onPlayPause,
+    playing,
+    onRewind,
+    onForward,
+    played,
+    onSeek,
+    onSeekMouseUp,
+    onVolumeChangeHandler,
+    onVolumeSeekUp,
+    volume,
+    mute,
+    onMute,
+    duration,
+    currentTime,
+    onMouseSeekDown,
+    fullScreen,
+    handleClickFullscreen,
+    controlRef,
+    onSync,
+  } = props;
   {
     /* on press space button in keyboard call all the control navigations using switch statement for p[lay, pause seek, etc... */
   }
