@@ -1,8 +1,14 @@
-import NextErrorComponent from 'next/error';
+import NextErrorComponent, { ErrorProps } from 'next/error';
 
 import * as Sentry from '@sentry/nextjs';
 
-const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
+interface MyErrorProps extends ErrorProps {
+  statusCode: number;
+  hasGetInitialPropsRun: boolean;
+  err?: Error;
+}
+
+function MyError({ statusCode, hasGetInitialPropsRun, err }: MyErrorProps) {
   if (!hasGetInitialPropsRun && err) {
     // getInitialProps is not called in case of
     // https://github.com/vercel/next.js/issues/8592. As a workaround, we pass
@@ -15,7 +21,7 @@ const MyError = ({ statusCode, hasGetInitialPropsRun, err }) => {
 };
 
 MyError.getInitialProps = async (context) => {
-  const errorInitialProps = await NextErrorComponent.getInitialProps(context);
+  const errorInitialProps = await NextErrorComponent.getInitialProps(context) as MyErrorProps;
 
   const { res, err, asPath } = context;
 
